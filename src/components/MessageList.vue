@@ -43,6 +43,7 @@ watch(() => props.messages, () => {
   padding: 10px;
   display: flex;
   flex-direction: column;
+  width: 360px;
 }
 
 .message {
