@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import { ref, watch, nextTick } from 'vue'
+import {ref, watch, nextTick, onMounted} from 'vue'
 
 const props = defineProps({
   messages: Array,
@@ -25,7 +25,7 @@ const props = defineProps({
 
 const messageList = ref(null)
 const lastMessage = ref(null)
-
+onMounted(() => { lastMessage.value.scrollIntoView({ behavior: 'smooth' }) })
 // Следим за изменениями в списке сообщений и скроллим вниз при добавлении новых сообщений
 watch(() => props.messages, () => {
   nextTick(() => {
