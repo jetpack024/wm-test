@@ -2,7 +2,7 @@
   <div class="user-list">
     <h3>Server Status</h3>
     <div
-        :class="connectionStatus ? 'connection-status' : 'server-status'">
+        :class="connectionStatus ? 'server-status-fail' : 'server-status-ok'">
       {{ connectionStatus ? 'Connection Lost' : 'Connection is ok' }}
     </div>
     <h3>Users Log</h3>
@@ -73,12 +73,12 @@ watch(() => props.notification, (newNotification) => {
   border-radius: 5px;
 }
 
-.server-status {
+.server-status-ok {
   margin-bottom: 200px;
   color: chartreuse;;
 }
 
-.connection-status {
+.server-status-fail {
   margin-bottom: 200px;
   color: red;
 }
